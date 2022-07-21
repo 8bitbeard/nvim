@@ -1,0 +1,11 @@
+{
+  "codeLens.enable": true,
+  "codeLens.position": "eol",
+  "java.referencesCodeLens.enabled": true,
+  "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": false,
+  "eslint.autoFixOnSave": true,
+  "elixirLS.dialyzerEnabled": false
+}
