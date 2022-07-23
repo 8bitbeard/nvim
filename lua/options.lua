@@ -22,6 +22,7 @@ local options = {
   incsearch = true,
   foldenable = false,
   completeopt=menu,menuone,noselect,
+  clipboard='unnamedplus'
 }
 
 for k, v in pairs(options) do
@@ -30,7 +31,12 @@ end
 
 vim.cmd([[
   colorscheme gruvbox
-  let g:test#strategy = 'harpoon'
+  function! ToggletermStrategy(cmd)
+    execute 'TermExec' . ' cmd="' . a:cmd . '"'
+  endfunction
+
+  let g:test#custom_strategies = {'toggleterm': function('ToggletermStrategy')}
+  let g:test#strategy = 'toggleterm'
 ]])
 
 vim.g.highlightedyank_highlight_duration = 40

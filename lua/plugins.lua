@@ -60,16 +60,19 @@ return packer.startup(function(use)
   -- LSP Plugins
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
-  use 'RRethy/vim-illuminate'
+  -- use 'RRethy/vim-illuminate'
   use 'mfussenegger/nvim-jdtls'
-  -- use 'jose-elias-alvarez/null-ls.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim'
 
-  -- Testing Pluggins
+  -- Testing Plugins
   use 'janko-m/vim-test'
 
   -- Debugging Plugins
   -- use 'mfussenegger/nvim-dap'
   -- use 'rcarriga/nvim-dap-ui'
+
+  -- Terminal Plugins
+  use {"akinsho/toggleterm.nvim", tag = 'v2.*' }
 
   -- Syntax Hilight
   use {

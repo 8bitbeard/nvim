@@ -11,5 +11,6 @@ require('rcplugins.harpoon')
 require('rcplugins.lualine')
 require('rcplugins.nvim-tree')
 require('rcplugins.telescope')
+require('rcplugins.toggleterm')
 require('rcplugins.treesitter')
 

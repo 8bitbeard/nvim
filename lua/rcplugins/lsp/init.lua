@@ -5,5 +5,5 @@ end
 
 require "rcplugins.lsp.configs"
 require("rcplugins.lsp.handlers").setup()
--- require("rcplugins.lsp.null-ls")
+require("rcplugins.lsp.null-ls")
 
