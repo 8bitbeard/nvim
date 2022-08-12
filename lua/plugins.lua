@@ -29,12 +29,15 @@ return packer.startup(function(use)
 
   -- GUI Plugins
   use 'gruvbox-community/gruvbox'
+  use 'folke/tokyonight.nvim'
   use 'kyazdani42/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use 'akinsho/bufferline.nvim'
   use 'lewis6991/gitsigns.nvim'
   use 'machakann/vim-highlightedyank'
+  use 'Yggdroot/indentLine'
+  use 'ntpeters/vim-better-whitespace'
 
   -- Workflow Plugins
   use 'tpope/vim-commentary'
@@ -43,6 +46,7 @@ return packer.startup(function(use)
   use 'jiangmiao/auto-pairs'
   use {'nvim-telescope/telescope.nvim', tag = '0.1.0' }
   use 'ThePrimeagen/harpoon'
+  -- use 'github/copilot.vim'
 
   -- Completion Plugins
   use 'hrsh7th/nvim-cmp'
@@ -59,10 +63,12 @@ return packer.startup(function(use)
 
   -- LSP Plugins
   use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
-  -- use 'RRethy/vim-illuminate'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  -- use 'williamboman/nvim-lsp-installer'
   use 'mfussenegger/nvim-jdtls'
   use 'jose-elias-alvarez/null-ls.nvim'
+  use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 
   -- Testing Plugins
   use 'janko-m/vim-test'
@@ -79,6 +85,7 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
+  -- use 'elixir-editors/vim-elixir'
 end)
 
 

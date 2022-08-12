@@ -61,4 +61,10 @@ keymap('n', '<leader>l', ':TestLast<CR>', options)
 keymap('n', '<leader>g', ':TestVisit<CR>', options)
 
 
+-- Nvim Tree
+vim.api.nvim_set_keymap("n", "<leader>nn", ":NvimTreeToggle<CR>", options)
+vim.api.nvim_set_keymap("n", "<leader>nr", ":NvimTreeRefresh<CR>", options)
+vim.api.nvim_set_keymap("n", "<leader>nf", ":NvimTreeFindFile<CR>", options)
+
+
 

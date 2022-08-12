@@ -18,8 +18,13 @@ null_ls.setup {
     -- },
     -- formatting.black.with { extra_args = { "--fast" } },
     formatting.prettier,
+    formatting.eslint,
     formatting.stylua,
+    formatting.mix,
     diagnostics.eslint,
+    diagnostics.credo.with{
+      extra_args = { "--strict" }
+    },
     code_actions.eslint,
     -- formatting.shfmt,
     -- formatting.google_java_format,
