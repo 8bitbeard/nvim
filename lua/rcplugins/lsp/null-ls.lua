@@ -21,6 +21,7 @@ null_ls.setup {
     formatting.eslint,
     formatting.stylua,
     formatting.mix,
+    formatting.rustfmt,
     diagnostics.eslint,
     diagnostics.credo.with{
       extra_args = { "--strict" }

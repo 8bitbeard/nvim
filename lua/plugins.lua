@@ -29,7 +29,7 @@ return packer.startup(function(use)
 
   -- GUI Plugins
   use 'gruvbox-community/gruvbox'
-  use 'folke/tokyonight.nvim'
+  -- use 'folke/tokyonight.nvim'
   use 'kyazdani42/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
@@ -38,7 +38,6 @@ return packer.startup(function(use)
   use 'machakann/vim-highlightedyank'
   use 'Yggdroot/indentLine'
   use 'ntpeters/vim-better-whitespace'
-
   -- Workflow Plugins
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
@@ -67,11 +66,14 @@ return packer.startup(function(use)
   use 'williamboman/mason-lspconfig.nvim'
   -- use 'williamboman/nvim-lsp-installer'
   use 'mfussenegger/nvim-jdtls'
-  use 'jose-elias-alvarez/null-ls.nvim'
+  -- use 'jose-elias-alvarez/null-ls.nvim'
+  use 'nvimtools/none-ls.nvim'
   use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 
   -- Testing Plugins
   use 'janko-m/vim-test'
+
+  use 'simrat39/rust-tools.nvim'
 
   -- Debugging Plugins
   -- use 'mfussenegger/nvim-dap'
@@ -82,8 +84,11 @@ return packer.startup(function(use)
 
   -- Syntax Hilight
   use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+      'nvim-treesitter/nvim-treesitter',
+      run = function()
+          local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+          ts_update()
+      end,
   }
   -- use 'elixir-editors/vim-elixir'
 end)
