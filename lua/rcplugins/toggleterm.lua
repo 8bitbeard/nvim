@@ -5,7 +5,8 @@ end
 
 toggleterm.setup {
   size = 20,
-  open_mapping = [[<c-\>]],
+  -- open_mapping = [[<c-\>]],
+  open_mapping = [[<c-t>]],
   hide_numbers = true,
   shade_filetypes = {},
   shade_terminals = true,
@@ -13,7 +14,7 @@ toggleterm.setup {
   start_in_insert = true,
   insert_mappings = true,
   persist_size = true,
-  direction = "float",
+  direction = "horizontal",
   close_on_exit = true,
   shell = vim.o.shell,
   float_opts = {
@@ -139,21 +140,21 @@ local vertical_term = Terminal:new {
       term.bufnr,
       "n",
       "<m-2>",
-      "<cmd>2ToggleTerm size=60 direction=vertical<cr>",
+      "<cmd>2ToggleTerm size=200 direction=vertical<cr>",
       { noremap = true, silent = true }
     )
     vim.api.nvim_buf_set_keymap(
       term.bufnr,
       "t",
       "<m-2>",
-      "<cmd>2ToggleTerm size=60 direction=vertical<cr>",
+      "<cmd>2ToggleTerm size=200 direction=vertical<cr>",
       { noremap = true, silent = true }
     )
     vim.api.nvim_buf_set_keymap(
       term.bufnr,
       "i",
       "<m-2>",
-      "<cmd>2ToggleTerm size=60 direction=vertical<cr>",
+      "<cmd>2ToggleTerm size=200 direction=vertical<cr>",
       { noremap = true, silent = true }
     )
     vim.api.nvim_buf_set_keymap(term.bufnr, "", "<m-3>", "<nop>", { noremap = true, silent = true })

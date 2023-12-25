@@ -29,7 +29,7 @@ return packer.startup(function(use)
 
   -- GUI Plugins
   use 'gruvbox-community/gruvbox'
-  -- use 'folke/tokyonight.nvim'
+  use 'folke/tokyonight.nvim'
   use 'kyazdani42/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
@@ -38,12 +38,26 @@ return packer.startup(function(use)
   use 'machakann/vim-highlightedyank'
   use 'Yggdroot/indentLine'
   use 'ntpeters/vim-better-whitespace'
+  -- use {
+  -- "folke/which-key.nvim",
+  -- config = function()
+  --   vim.o.timeout = true
+  --   vim.o.timeoutlen = 300
+  --   require("which-key").setup {
+  --     -- your configuration comes here
+  --     -- or leave it empty to use the default settings
+  --     -- refer to the configuration section below
+  --   }
+  -- end
+-- }
+
   -- Workflow Plugins
-  use 'tpope/vim-commentary'
+  -- use 'tpope/vim-commentary'
+  use 'numToStr/Comment.nvim'
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
   use 'jiangmiao/auto-pairs'
-  use {'nvim-telescope/telescope.nvim', tag = '0.1.0' }
+  use {'nvim-telescope/telescope.nvim', tag = '0.1.4' }
   use 'ThePrimeagen/harpoon'
   -- use 'github/copilot.vim'
 
@@ -64,25 +78,25 @@ return packer.startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
-  -- use 'williamboman/nvim-lsp-installer'
-  use 'mfussenegger/nvim-jdtls'
-  -- use 'jose-elias-alvarez/null-ls.nvim'
   use 'nvimtools/none-ls.nvim'
-  use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+  -- use 'williamboman/nvim-lsp-installer'
+  -- use 'mfussenegger/nvim-jdtls'
+  -- use 'jose-elias-alvarez/null-ls.nvim'
+  -- use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 
   -- Testing Plugins
   use 'janko-m/vim-test'
 
-  use 'simrat39/rust-tools.nvim'
-
   -- Debugging Plugins
-  -- use 'mfussenegger/nvim-dap'
-  -- use 'rcarriga/nvim-dap-ui'
+  -- use 'theHamsta/nvim-dap-virtual-text'
+  use 'mfussenegger/nvim-dap'
+  use 'rcarriga/nvim-dap-ui'
+  use 'leoluz/nvim-dap-go'
 
   -- Terminal Plugins
   use {"akinsho/toggleterm.nvim", tag = 'v2.*' }
 
-  -- Syntax Hilight
+  -- Language grammar setup
   use {
       'nvim-treesitter/nvim-treesitter',
       run = function()
@@ -90,7 +104,10 @@ return packer.startup(function(use)
           ts_update()
       end,
   }
+
+  -- Language specific Plugins
   -- use 'elixir-editors/vim-elixir'
+  -- use 'simrat39/rust-tools.nvim'
 end)
 
 

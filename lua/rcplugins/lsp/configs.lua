@@ -24,7 +24,7 @@
 -- end
 --
 
-require('rust-tools').setup()
+-- require('rust-tools').setup()
 
 local status_ok, mason = pcall(require, "mason")
 if not status_ok then
@@ -44,7 +44,17 @@ mason.setup({
 local mason_lspconfig = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 
-local servers = { "jsonls", "lua_ls", "tsserver", "elixirls", "solargraph", "intelephense", "rust_analyzer", "gopls", "pyright"}
+local servers = {
+  "jsonls",
+  "lua_ls",
+  "tsserver",
+  "elixirls",
+  "solargraph",
+  "intelephense",
+  "rust_analyzer",
+  "gopls",
+  "pyright"
+}
 
 mason_lspconfig.setup({
   ensure_installed = servers,

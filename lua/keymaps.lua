@@ -4,18 +4,16 @@ vim.g.maplocalleader = " "
 local keymap = vim.api.nvim_set_keymap
 local options = { noremap = true, silent = true }
 
-
 -- Custom
-keymap('n', '<leader>bb', ':b#<CR>', {})
-keymap('n', '<leader>qq', ':bd<CR>', {})
-keymap('n', '<leader>wq', ':%bd<bar>e#<bar>bd#<CR>', {})
-keymap('n', '<leader>]', ':bnext<CR>', {})
-keymap('n', '<leader>[', ':bprevious<CR>', {})
-keymap('n', '<leader>ez', ':e $HOME/.zshrc<CR>', {})
-keymap('n', '<leader>et', ':e $HOME/.tmux.conf<CR>', {})
-keymap('n', '<leader>ek', ':e $HOME/.config/nvim/lua/keymaps.lua<CR>', {})
-keymap('n', '<leader>ev', ':e $HOME/.config/nvim/init.lua<CR>', {})
-
+keymap("n", "<leader>bb", ":b#<CR>", {})
+keymap("n", "<leader>qq", ":bd<CR>", {})
+keymap("n", "<leader>wq", ":%bd<bar>e#<bar>bd#<CR>", {})
+keymap("n", "<leader>]", ":bnext<CR>", {})
+keymap("n", "<leader>[", ":bprevious<CR>", {})
+keymap("n", "<leader>ez", ":e $HOME/.zshrc<CR>", {})
+keymap("n", "<leader>et", ":e $HOME/.tmux.conf<CR>", {})
+keymap("n", "<leader>ek", ":e $HOME/.config/nvim/lua/keymaps.lua<CR>", {})
+keymap("n", "<leader>ev", ":e $HOME/.config/nvim/init.lua<CR>", {})
 
 -- Built In LSP
 -- keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', options)
@@ -34,37 +32,42 @@ keymap('n', '<leader>ev', ':e $HOME/.config/nvim/init.lua<CR>', {})
 -- keymap('n', ']d', '<cmd>lua vim.lsp.diagnostics.goto_next()<CR>', options)
 -- keymap('n', '<leader>ff', '<cmd>lua vim.lsp.buf.formatting_sync(nil, 1000)<CR>', options)
 
-
 -- Telescope
-keymap('n', '<C-p>', '<cmd>lua require("telescope.builtin").find_files()<CR>', options)
-keymap('n', '<C-g>', '<cmd>lua require("telescope.builtin").git_files()<CR>', options)
-keymap('n', '<C-o>', '<cmd>lua require("telescope.builtin").buffers()<CR>', options)
-keymap('n', 'fg', '<cmd>lua require("telescope.builtin").live_grep()<CR>', options)
-keymap('n', 'fh', '<cmd>lua require("telescope.builtin").help_tags()<CR>', options)
-
+keymap("n", "<C-m>", '<cmd>lua require("telescope.builtin").keymaps()<CR>', options)
+keymap("n", "<C-p>", '<cmd>lua require("telescope.builtin").find_files()<CR>', options)
+keymap("n", "<C-g>", '<cmd>lua require("telescope.builtin").git_files()<CR>', options)
+keymap("n", "<C-o>", '<cmd>lua require("telescope.builtin").buffers()<CR>', options)
+keymap("n", "fg", '<cmd>lua require("telescope.builtin").live_grep()<CR>', options)
+keymap("n", "fh", '<cmd>lua require("telescope.builtin").help_tags()<CR>', options)
 
 -- Harpoon
-keymap('n', '<C-t>', '<cmd>lua require("harpoon.term").gotoTerminal(1)<CR>', options)
-keymap('n', '<C-s>', '<cmd>lua require("harpoon.mark").add_file()<CR>', options)
-keymap('n', '<C-e>', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', options)
-keymap('n', '<C-h>', '<cmd>lua require("harpoon.ui").nav_file(1)<CR>', options)
-keymap('n', '<C-j>', '<cmd>lua require("harpoon.ui").nav_file(2)<CR>', options)
-keymap('n', '<C-k>', '<cmd>lua require("harpoon.ui").nav_file(3)<CR>', options)
-keymap('n', '<C-l>', '<cmd>lua require("harpoon.ui").nav_file(4)<CR>', options)
-
+-- keymap("n", "<C-t>", '<cmd>lua require("harpoon.term").gotoTerminal(1)<CR>', options)
+keymap("n", "<C-s>", '<cmd>lua require("harpoon.mark").add_file()<CR>', options)
+keymap("n", "<C-e>", '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', options)
+keymap("n", "<C-h>", '<cmd>lua require("harpoon.ui").nav_file(1)<CR>', options)
+keymap("n", "<C-j>", '<cmd>lua require("harpoon.ui").nav_file(2)<CR>', options)
+keymap("n", "<C-k>", '<cmd>lua require("harpoon.ui").nav_file(3)<CR>', options)
+keymap("n", "<C-l>", '<cmd>lua require("harpoon.ui").nav_file(4)<CR>', options)
 
 -- Vim Test
-keymap('n', '<leader>t', ':TestNearest<CR>', options)
-keymap('n', '<leader>T', ':TestFile<CR>', options)
-keymap('n', '<leader>a', ':TestSuite<CR>', options)
-keymap('n', '<leader>l', ':TestLast<CR>', options)
-keymap('n', '<leader>g', ':TestVisit<CR>', options)
-
+keymap("n", "<leader>t", ":TestNearest<CR>", options)
+keymap("n", "<leader>T", ":TestFile<CR>", options)
+keymap("n", "<leader>a", ":TestSuite<CR>", options)
+keymap("n", "<leader>l", ":TestLast<CR>", options)
+keymap("n", "<leader>g", ":TestVisit<CR>", options)
 
 -- Nvim Tree
 vim.api.nvim_set_keymap("n", "<leader>nn", ":NvimTreeToggle<CR>", options)
 vim.api.nvim_set_keymap("n", "<leader>nr", ":NvimTreeRefresh<CR>", options)
 vim.api.nvim_set_keymap("n", "<leader>nf", ":NvimTreeFindFile<CR>", options)
 
-
-
+--DAP
+keymap("n", "<F2>", ":lua require'dap'.step_over()<CR>", options)
+keymap("n", "<F3>", ":lua require'dap'.step_into()<CR>", options)
+keymap("n", "<F4>", ":lua require'dap'.step_out()<CR>", options)
+keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", options)
+keymap("n", "<F6>", ":lua require'dapui'.toggle()<CR>", options)
+keymap("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", options)
+keymap("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", options)
+keymap("n", "<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('log point message: '))<CR>", options)
+keymap("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>", options)

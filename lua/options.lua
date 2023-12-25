@@ -1,33 +1,35 @@
 local options = {
-  splitright = true,
-  hidden = true,
-  errorbells = false,
-  termguicolors = true,
-  background = 'dark',
-  number = true,
-  relativenumber = true,
-  scrolloff = 12,
-  wrap = false,
-  cursorline = true,
-  tabstop = 2,
-  softtabstop = 2,
-  shiftwidth = 2,
-  expandtab = true,
-  updatetime = 50,
-  swapfile = false,
-  backup = false,
-  undodir = os.getenv("HOME") .. "/.vim/undodir",
-  undofile = true,
-  hlsearch = false,
-  incsearch = true,
-  foldenable = false,
-  autoindent = true,
-  completeopt=menu,menuone,noselect,
-  clipboard='unnamedplus'
+	splitright = true,
+	hidden = true,
+	errorbells = false,
+	termguicolors = true,
+	background = "dark",
+	number = true,
+	relativenumber = true,
+	scrolloff = 12,
+	wrap = false,
+	cursorline = true,
+	tabstop = 2,
+	softtabstop = 2,
+	shiftwidth = 2,
+	expandtab = true,
+	updatetime = 50,
+	swapfile = false,
+	backup = false,
+	undodir = os.getenv("HOME") .. "/.vim/undodir",
+	undofile = true,
+	hlsearch = false,
+	incsearch = true,
+	foldenable = false,
+	autoindent = true,
+	completeopt = menu,
+	menuone,
+	noselect,
+	clipboard = "unnamedplus",
 }
 
 for k, v in pairs(options) do
-  vim.opt[k] = v
+	vim.opt[k] = v
 end
 
 vim.cmd([[
@@ -55,7 +57,8 @@ vim.cmd([[
 vim.g.highlightedyank_highlight_duration = 40
 
 vim.g.better_whitespace_enabled = 1
+vim.g.better_whitespace_filetypes_blacklist= {'toggleterm', 'diff', 'git', 'gitcommit', 'unite', 'qf', 'help', 'markdown', 'fugitive'}
 -- vim.g.strip_whitespace_on_save = 1
 --
-vim.g.vim_json_conceal=0
+vim.g.vim_json_conceal = 0
 vim.g.vim_json_syntax_conceal = 0
