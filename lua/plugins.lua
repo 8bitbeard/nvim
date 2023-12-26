@@ -50,6 +50,8 @@ return packer.startup(function(use)
   --   }
   -- end
 -- }
+--
+  use 'rest-nvim/rest.nvim'
 
   -- Workflow Plugins
   -- use 'tpope/vim-commentary'

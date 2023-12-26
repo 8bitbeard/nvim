@@ -1,14 +1,18 @@
-local status_ok, nvim_treesitter_configs = pcall(require("nvim-treesitter.configs"))
-if not status_ok then
-	return
-end
+-- local status_ok, nvim_treesitter_configs = pcall(require("nvim-treesitter.configs"))
+-- if not status_ok then
+-- 	return
+-- end
+
+local nvim_treesitter_configs = require("nvim-treesitter.configs")
 
 nvim_treesitter_configs.setup({
 	ensure_installed = {
 		"elixir",
 		"go",
+    "http",
 		"java",
 		"javascript",
+    "json",
 		"lua",
 		"python",
 		"rust",
