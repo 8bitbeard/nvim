@@ -1,1 +1,0 @@
-{"metrics":{"start_time":1703624303242,"completion_time":1703624304778},"secondary_sources":[],"schema_version":"1.1","primary_source":{"id":"pkg:github\/fwcd\/kotlin-debug-adapter@0.4.4","type":"registry+v1"},"links":{"share":{},"bin":{"kotlin-debug-adapter":"adapter\/bin\/kotlin-debug-adapter"},"opt":{}},"name":"kotlin-debug-adapter"}

@@ -1,1 +1,0 @@
-{"metrics":{"start_time":1703624311988,"completion_time":1703624316509},"secondary_sources":[],"schema_version":"1.1","primary_source":{"id":"pkg:github\/detekt\/detekt@v1.23.4","type":"registry+v1"},"links":{"share":{},"bin":{"detekt":"detekt-cli-1.23.4\/bin\/detekt-cli"},"opt":{}},"name":"detekt"}

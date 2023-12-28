@@ -31,6 +31,12 @@ keymap("n", "<leader>ev", ":e $HOME/.config/nvim/init.lua<CR>", {})
 -- keymap('n', '[d', '<cmd>lua vim.lsp.diagnostics.goto_prev()<CR>', options)
 -- keymap('n', ']d', '<cmd>lua vim.lsp.diagnostics.goto_next()<CR>', options)
 -- keymap('n', '<leader>ff', '<cmd>lua vim.lsp.buf.formatting_sync(nil, 1000)<CR>', options)
+--
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Telescope
 keymap("n", "<C-m>", '<cmd>lua require("telescope.builtin").keymaps()<CR>', options)

@@ -8,19 +8,18 @@ vim.cmd([[
 
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-	return
+  return
 end
 
 packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "single" })
-		end,
-	},
+  display = {
+    open_fn = function()
+      return require("packer.util").float({ border = "single" })
+    end,
+  },
 })
 
 return packer.startup(function(use)
-
   -- Plugin Manager
   use 'wbthomason/packer.nvim'
 
@@ -36,8 +35,8 @@ return packer.startup(function(use)
   use 'akinsho/bufferline.nvim'
   use 'lewis6991/gitsigns.nvim'
   use 'machakann/vim-highlightedyank'
-  use 'Yggdroot/indentLine'
-  use 'ntpeters/vim-better-whitespace'
+  use "lukas-reineke/indent-blankline.nvim"
+  -- use 'ntpeters/vim-better-whitespace'
   -- use {
   -- "folke/which-key.nvim",
   -- config = function()
@@ -49,8 +48,8 @@ return packer.startup(function(use)
   --     -- refer to the configuration section below
   --   }
   -- end
--- }
---
+  -- }
+  --
   use 'rest-nvim/rest.nvim'
 
   -- Workflow Plugins
@@ -59,7 +58,9 @@ return packer.startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
   use 'jiangmiao/auto-pairs'
-  use {'nvim-telescope/telescope.nvim', tag = '0.1.4' }
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.4'
+  }
   use 'ThePrimeagen/harpoon'
   -- use 'github/copilot.vim'
 
@@ -81,6 +82,7 @@ return packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'nvimtools/none-ls.nvim'
+  use 'folke/neodev.nvim'
   -- use 'williamboman/nvim-lsp-installer'
   -- use 'mfussenegger/nvim-jdtls'
   -- use 'jose-elias-alvarez/null-ls.nvim'
@@ -96,22 +98,21 @@ return packer.startup(function(use)
   use 'leoluz/nvim-dap-go'
 
   -- Terminal Plugins
-  use {"akinsho/toggleterm.nvim", tag = 'v2.*' }
+  use {
+    "akinsho/toggleterm.nvim",
+    tag = 'v2.*'
+  }
 
   -- Language grammar setup
   use {
-      'nvim-treesitter/nvim-treesitter',
-      run = function()
-          local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-          ts_update()
-      end,
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
   }
 
   -- Language specific Plugins
   -- use 'elixir-editors/vim-elixir'
   -- use 'simrat39/rust-tools.nvim'
 end)
-
-
-
-
